@@ -1,0 +1,2 @@
+This assignment requires to perform foundational SQL operations. The primary goal is to demonstrate proficiency in database schema creation, data manipulation, and the application of both logical and arithmetic operators.
+Advanced Querying with ORDER BY clause. This demonstrates the ability to sort the query results in a meaningful sequence, such as ascending or descending order of a specific column.
