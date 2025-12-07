@@ -1,0 +1,62 @@
+CREATE TABLE consumers(
+  customer_id INT PRIMARY KEY,
+  first_name VARCHAR(25) NOT NULL DEFAULT "Unnamed",
+  last_name VARCHAR(25),
+  age INT NOT NULL,
+  country VARCHAR(50)
+);
+
+
+INSERT INTO consumers (customer_id, first_name, last_name, age, country)
+VALUES
+(1,"John","Doe",31,"USA"),
+(2,"Robert","Luna",22,"USA"),
+(3,"David","Robinson",22,"UK"),
+(4,"John","Reinhardt",25,"UK"),
+(5,"Betty","Doe",28,"UAE");
+
+SELECT * FROM consumers;
+
+SELECT * FROM consumers
+WHERE age >30 AND country = "USA";
+
+SELECT * FROM customers
+WHERE age<=20 OR country = "UK";
+
+SELECT * FROM customers
+WHERE NOT country = "UK";
+
+SELECT * FROM consumers
+ORDER BY age DESC;
+
+SELECT * FROM consumers
+ORDER BY country ASC;
+
+CREATE TABLE order_placed(
+  order_id INT PRIMARY KEY,
+  item VARCHAR(25),
+  amount INT,
+  customer_id INT NOT NULL
+);
+
+INSERT INTO order_placed (order_id,item,amount,customer_id)
+VALUES
+(1,"Keyboard",400,4),
+(2,"Mouse",300,4),
+(3,"Monitor",12000,3),
+(4,"Keyboard",400,1),
+(5,"Mousepad",250,2);
+
+SELECT * FROM order_placed;
+
+SELECT SUM(amount) FROM order_placed;
+
+SELECT AVG(amount) FROM order_placed;
+
+SELECT COUNT(item) FROM order_placed;
+
+SELECT * FROM order_placed
+ORDER BY amount ASC;
+
+SELECT * FROM order_placed
+ORDER BY item DESC;
